@@ -22,13 +22,3 @@ jobs:
       - name: Push image
         run: |
           docker push "${{ secrets.DOCKER_USERNAME }}/netpro_coursework:latest"
-
-      - name: Build Docker image
-        shell: bash
-        run: |
-          cd "$GITHUB_WORKSPACE"
-          docker build -t "${{ secrets.DOCKER_USERNAME }}/netpro_coursework:latest" .
-
-      - name: Push Docker image
-        run: |
-          docker push "${{ secrets.DOCKER_USERNAME }}/netpro_coursework:latest"
